@@ -10,7 +10,7 @@ namespace DataLayer
 {
     public class DataAccessPoint : DbContext
     {
-        public DataAccessPoint(DbContextOptions options) : base(options) { }
+        public DataAccessPoint(DbContextOptions<DataAccessPoint> options) : base(options) { }
         public DbSet<BoardGameModel> BoardGames { get; set; }
     }
 }
