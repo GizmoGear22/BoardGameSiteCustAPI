@@ -1,5 +1,7 @@
 using DataLayer;
 using DataLayer.DataHandlers;
+using LogicLayer.APILogic;
+using LogicLayer.DBLogic;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,8 @@ builder.Services.AddSwaggerGen();
 
 //DI services
 builder.Services.AddTransient<IDBHandlers, DBHandlers>();
+builder.Services.AddTransient<IDBLogicHandlers, DBLogicHandlers>();
+builder.Services.AddTransient<IAPILogicHandlers, APILogicHandlers>();
 
 builder.Services.AddDbContext<DataAccessPoint>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DbCnnString")));
 
