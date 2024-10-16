@@ -22,5 +22,12 @@ namespace DataLayer.DataHandlers
             var data = await _dataAccessPoint.BoardGames.AsNoTracking().ToListAsync();
             return data;
         }
+
+        public async Task<BoardGameModel> AddGameToRepo(BoardGameModel boardGame)
+        {
+            var data = await _dataAccessPoint.BoardGames.AddAsync(boardGame);
+            await _dataAccessPoint.SaveChangesAsync();
+            return boardGame;
+        }
     }
 }

@@ -22,5 +22,20 @@ namespace MainAPI.Controllers
             var data = await _handler.GetAllGamesToAPI();
             return data;
         }
+
+        [HttpPost]
+        [Route("CreateNewGame")]
+        public async Task<IActionResult> AddNewGame([FromBody] BoardGameModel boardGame)
+        {
+            if (ModelState.IsValid)
+            {
+                await _handler.SaveGameFromAPI(boardGame);
+                return Ok(boardGame);
+            }
+            else
+            {
+                return BadRequest("Improper Request");
+            }
+        }
     }
 }

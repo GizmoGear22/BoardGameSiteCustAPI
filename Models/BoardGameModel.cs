@@ -20,7 +20,7 @@ namespace Models
         [Required]
         public Difficulty difficulty { get; set; }
         [MaxLength(1000)]
-        public string tags { get; set; }
+        public List<string> tags { get; set; }
         [Required]
         public string description { get; set; }
 

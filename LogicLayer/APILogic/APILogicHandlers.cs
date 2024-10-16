@@ -21,5 +21,11 @@ namespace LogicLayer.APILogic
             var data = await _handler.GetAllGamesFromRepo();
             return data;
         }
+
+        public async Task<BoardGameModel> SaveGameFromAPI(BoardGameModel boardGame)
+        {
+            var data = await _handler.SaveGameToRepo(boardGame);
+            return data;
+        }
     }
 }

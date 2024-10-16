@@ -21,5 +21,11 @@ namespace LogicLayer.DBLogic
             var data = await _handlers.GetAllGames();
             return data;
         }
+
+        public async Task<BoardGameModel> SaveGameToRepo(BoardGameModel boardGame)
+        {
+            var data = await _handlers.AddGameToRepo(boardGame);
+            return data;
+        }
     }
 }
