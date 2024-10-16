@@ -17,9 +17,23 @@ namespace Models
         [Required]
         [MaxLength(10)]
         public string numberOfPlayers { get; set; }
+        [Required]
+        public Difficulty difficulty { get; set; }
         [MaxLength(1000)]
         public string tags { get; set; }
         [Required]
         public string description { get; set; }
+
+
     }
+
+    public enum Difficulty
+    {
+        Easy,
+        Standard,
+        Hard,
+        Expert
+    }
+
+
 }
