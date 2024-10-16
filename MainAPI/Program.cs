@@ -1,4 +1,5 @@
 using DataLayer;
+using DataLayer.DataHandlers;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//DI services
+builder.Services.AddTransient<IDBHandlers, DBHandlers>();
 
 builder.Services.AddDbContext<DataAccessPoint>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DbCnnString")));
 

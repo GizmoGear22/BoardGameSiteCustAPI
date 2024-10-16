@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainAPI", "MainAPI\MainAPI.csproj", "{297167D1-53CB-4EB2-A693-A5E2FB0E36B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MainAPI", "MainAPI\MainAPI.csproj", "{297167D1-53CB-4EB2-A693-A5E2FB0E36B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{8B7C2C83-F3D9-4AFC-8502-5ED6E108E9EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{8B7C2C83-F3D9-4AFC-8502-5ED6E108E9EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{113ADEB1-875E-471A-821F-F8D3ADCD0672}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataLayer", "DataLayer\DataLayer.csproj", "{113ADEB1-875E-471A-821F-F8D3ADCD0672}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicLayer", "LogicLayer\LogicLayer.csproj", "{BDAB81D5-44F0-4EE0-99E2-AD9561E074E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicLayer", "LogicLayer\LogicLayer.csproj", "{BDAB81D5-44F0-4EE0-99E2-AD9561E074E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationLayer", "ValidationLayer\ValidationLayer.csproj", "{16B9027F-157C-4CFB-9BD7-5364CB440C01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{BDAB81D5-44F0-4EE0-99E2-AD9561E074E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDAB81D5-44F0-4EE0-99E2-AD9561E074E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDAB81D5-44F0-4EE0-99E2-AD9561E074E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16B9027F-157C-4CFB-9BD7-5364CB440C01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16B9027F-157C-4CFB-9BD7-5364CB440C01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16B9027F-157C-4CFB-9BD7-5364CB440C01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16B9027F-157C-4CFB-9BD7-5364CB440C01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
