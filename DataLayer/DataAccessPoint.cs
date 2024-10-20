@@ -12,5 +12,11 @@ namespace DataLayer
     {
         public DataAccessPoint(DbContextOptions<DataAccessPoint> options) : base(options) { }
         public DbSet<BoardGameModel> BoardGames { get; set; }
+        public DbSet<ImageModel> Images { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ImageModel>().Property(e => e.ImageData).HasColumnType("VARBINARY(MAX)");
+        }
     }
 }

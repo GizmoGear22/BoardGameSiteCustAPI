@@ -23,6 +23,7 @@ namespace Models
         public List<string> tags { get; set; }
         [Required]
         public string description { get; set; }
+        public ImageModel image { get; set; }
 
 
     }
