@@ -10,20 +10,21 @@ namespace Models
     public class BoardGameModel
     {
         [Required]
-        public int id {  get; set; }
+        public int Id {  get; set; }
         [Required]
         [MaxLength(100)]
-        public string name { get; set; }
+        public string Name { get; set; }
         [Required]
-        [MaxLength(10)]
-        public string numberOfPlayers { get; set; }
+        public int MinPlayers { get; set; }
         [Required]
-        public Difficulty difficulty { get; set; }
+        public int MaxPlayers { get; set; }
+        [Required]
+        public Difficulty Difficulty { get; set; }
         [MaxLength(1000)]
-        public List<string> tags { get; set; }
+        public List<string> Tags { get; set; }
         [Required]
-        public string description { get; set; }
-        public ImageModel image { get; set; }
+        public string Description { get; set; }
+        public string ImageLocation { get; set; }
 
 
     }

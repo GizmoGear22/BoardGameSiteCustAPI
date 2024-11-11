@@ -12,12 +12,13 @@ namespace Models
         [Required]
         public int Id { get; set; }
         [Required]
-        public byte[] ImageData { get; set; }
-        [Required]
         [MaxLength(255)]
         public string FileName { get; set; }
         [Required]
         [MaxLength(255)]
         public string ContentType { get; set; }
+        [Required]
+        [MaxLength(255)]
+        public string FilePath { get; set; }
     }
 }
