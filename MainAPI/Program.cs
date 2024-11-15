@@ -3,6 +3,7 @@ using DataLayer.DataHandlers;
 using LogicLayer.APILogic;
 using LogicLayer.DBLogic;
 using Microsoft.EntityFrameworkCore;
+using ValidationLayer.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen( );
 
 //DI services
 builder.Services.AddTransient<IDBHandlers, DBHandlers>();
@@ -30,6 +31,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseMiddleware<ApiMiddleware>();
 
 app.UseAuthorization();
 

@@ -22,6 +22,21 @@ namespace ValidationLayer.Middleware
 
 		public async Task InvokeAsync(HttpContext context)
 		{
+			var apiKey = _config.GetValue<string>("apiKey");
+
+			if (!context.Response.Headers.TryGetValue(apiHeader, out var value))
+				{
+					context.Response.StatusCode = 401;
+					await context.Response.WriteAsync("Enter API Key");
+				}
+
+			if (!apiKey.Equals(value)) 
+			{
+				context.Response.StatusCode = 402;
+				await context.Response.WriteAsync("Input correct API Key");
+			}
+
+			await _next(context);
 
 		}
 
