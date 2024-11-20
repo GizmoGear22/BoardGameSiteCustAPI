@@ -9,7 +9,6 @@ namespace Models
 {
     public class BoardGameModel
     {
-        [Required]
         public int Id {  get; set; }
         [Required]
         [MaxLength(100)]

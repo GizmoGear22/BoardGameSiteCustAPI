@@ -12,7 +12,7 @@ namespace ValidationLayer.Middleware
     {
         private readonly RequestDelegate _next;
         private readonly IConfiguration _config;
-        private const string apiHeader = "X-api-key";
+        private const string apiHeader = "X-Api-Key";
 
 		public ApiMiddleware(RequestDelegate next, IConfiguration config)
 		{
@@ -22,18 +22,20 @@ namespace ValidationLayer.Middleware
 
 		public async Task InvokeAsync(HttpContext context)
 		{
-			var apiKey = _config.GetValue<string>("apiKey");
-
-			if (!context.Response.Headers.TryGetValue(apiHeader, out var value))
+			if (!context.Request.Headers.TryGetValue(apiHeader, out var value))
 				{
 					context.Response.StatusCode = 401;
 					await context.Response.WriteAsync("Enter API Key");
+				return;
 				}
+
+			var apiKey = _config.GetValue<string>("apiKey");
 
 			if (!apiKey.Equals(value)) 
 			{
 				context.Response.StatusCode = 402;
 				await context.Response.WriteAsync("Input correct API Key");
+				return;
 			}
 
 			await _next(context);

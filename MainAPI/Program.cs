@@ -48,6 +48,11 @@ builder.Services.AddTransient<IAPILogicHandlers, APILogicHandlers>();
 
 builder.Services.AddDbContext<DataAccessPoint>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DbCnnString")));
 
+//CORS
+
+builder.Services.AddCors(options => options.AddDefaultPolicy(
+	builder => builder.AllowCredentials().AllowAnyHeader().AllowAnyMethod()));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
